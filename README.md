@@ -2,9 +2,11 @@
 
 stepper scraper walkthrough
 
+dep: [ node v20.9.0+ , npm 10.1.0+ ]
+
 # Scraping Recept
 
-This is a script designed for scraping data. It utilizes Puppeteer for web scraping and TypeScript for development. With this script, you can easily extract data from web pages using Puppeteer and manipulate it as needed.
+This is a script designed for scraping data. It utilizes Puppeteer for web scraping. With this script, you can easily extract data from web pages using Puppeteer and manipulate it as needed. It will use like fast boilerplate code for other scraping activities. Down the document, is section about usage :)
 
 ## Installation
 
@@ -58,7 +60,7 @@ This command will create a dist directory with the compiled JavaScript files.
 ### To run the compiled JavaScript version of the script, use:
 
 ```
-npm start
+npm start:build
 This will execute the index.js file located in the dist directory.
 ```
 
@@ -70,10 +72,10 @@ You can modify the index.ts file to suit your specific scraping needs. By defaul
 
 There are few mechanism which should be implemented before you wish to use this script commercial.
 
-- [] SetUp proxy adapters and and by multiple proxy providers/servers
-- [] Make orchestration layer instead of "accumulator" then we can run in concurrent
-- [] Fallback and retry logic
-- []
+[] - SetUp proxy adapters and and by multiple proxy providers/servers
+[] - Make orchestration layer instead of "accumulator" then we can run in concurrent
+[] - Fallback and retry logic
+[]
 
 ## Dependencies
 

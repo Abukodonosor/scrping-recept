@@ -28,10 +28,11 @@ export const AccumulatorObject: AccumulatorObj = {
 /**
  *
  * Inspiration was to make iterator which will loop trough the scenarios.
- * Those scenarios describe our usage of the scraper itself.
+ * Those scenarios describe our usage of the scraper itself. (we get flexible)
  *
  * We should treat it like story, which is splitted in logical scenarios.
  * If you want to join writing the story, just add the new scenario :)
+ *
  *
  *
  */

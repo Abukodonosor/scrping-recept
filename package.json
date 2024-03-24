@@ -2,7 +2,7 @@
   "name": "scrping-recept",
   "version": "0.0.1",
   "description": "Script for scraping data",
-  "main": "index.js",
+  "main": "dist/index.js.",
   "scripts": {
     "dev": "ts-node index.ts",
     "build": "tsc",
