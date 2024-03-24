@@ -1,8 +1,8 @@
-# scrping-recept
+# scraping-recept
 
-stepper scraper playthrough
+stepper scraper walkthrough
 
-# Scrping Recept
+# Scraping Recept
 
 This is a script designed for scraping data. It utilizes Puppeteer for web scraping and TypeScript for development. With this script, you can easily extract data from web pages using Puppeteer and manipulate it as needed.
 
@@ -65,6 +65,15 @@ This will execute the index.js file located in the dist directory.
 ## Usage
 
 You can modify the index.ts file to suit your specific scraping needs. By default, it uses Puppeteer to scrape data from web pages. Ensure you have proper permissions to scrape the websites you intend to target.
+
+# For commercial usage
+
+There are few mechanism which should be implemented before you wish to use this script commercial.
+
+- [] SetUp proxy adapters and and by multiple proxy providers/servers
+- [] Make orchestration layer instead of "accumulator" then we can run in concurrent
+- [] Fallback and retry logic
+- []
 
 ## Dependencies
 

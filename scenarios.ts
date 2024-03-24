@@ -11,6 +11,8 @@ export const AccumulatorObject: AccumulatorObj = {
     SITE_URL: "https://www.etsy.com/",
     MAX_CATEGORY: 1,
     MAX_ITEMS_PER_PAGE: 10,
+    ADD_CARD_PRODUCT_URL:
+      "https://www.etsy.com/listing/594957748/stunning-small-gunmetal-green-ceramic?ref=cart",
   },
   // Dynamic contextual data
   TEMP: {
@@ -172,23 +174,29 @@ export const scrapingSteps: Scenario[] = [
       }
     },
   },
-  // {
-  //   name: "5. Simulate Adding Products to Cart ",
-  //   action: async (page, accumulator) => {
-  //     // uzmi jedan random proizvod
+  {
+    name: "5. Simulate Adding Products to Cart ",
+    action: async (page, accumulator) => {
+      // We could use random URL, or hardcoded like this from config for now.
+      const { ADD_CARD_PRODUCT_URL } = accumulator.CONFIG;
+      await page.goto(ADD_CARD_PRODUCT_URL);
 
-  //     await page.goto("https://www.etsy.com/");
+      // Add to card action
+      await page.click(".wt-btn.wt-btn--filled.wt-width-full");
+      await page.waitForNavigation();
+    },
+  },
+  {
+    name: "6. Checkout Simulation",
+    action: async (page) => {
+      await page.click(
+        ".proceed-to-checkout.wt-btn.wt-btn--filled.wt-mt-xs-2.wt-width-full"
+      );
 
-  //     // dodaj ga na karticu
-  //   },
-  // },
-  // {
-  //   name: "6. Checkout Simulation",
-  //   action: async (page, accumulator) => {
-  //     await page.goto("https://www.etsy.com/");
-
-  //     // otici na korpu
-
-  //     // pokusati da kliknete na CTA za kupovinu
-  //   },
+      // Wait for the overlay modal to appear
+      await page.waitForSelector(
+        ".wt-overlay__modal.wt-overlay--animation-done"
+      );
+    },
+  },
 ];

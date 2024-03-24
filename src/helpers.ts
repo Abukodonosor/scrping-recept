@@ -42,3 +42,10 @@ export const writeJSONToFile = (data: any, filePath: string) => {
   const jsonData = JSON.stringify(data, null, 2); // null and 2 for pretty formatting
   fs.writeFileSync(filePath, jsonData, "utf8");
 };
+
+export const getRandomElementFromArray = <T>(array: T[]): T | null => {
+  // Check if empty
+  if (array.length === 0) return null;
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+};

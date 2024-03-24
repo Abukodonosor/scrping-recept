@@ -6,6 +6,7 @@ export interface AccumulatorObj {
     SITE_URL: string;
     MAX_CATEGORY: number;
     MAX_ITEMS_PER_PAGE: number;
+    ADD_CARD_PRODUCT_URL: string;
   };
   // Dynamic contextual data
   TEMP: {

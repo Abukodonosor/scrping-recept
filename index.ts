@@ -14,5 +14,6 @@ import { HPuppeteerFacade } from "./src/puppeteer";
   } finally {
     await facade.close();
     writeJSONToFile(res, "./item-results.json");
+    console.log(`Process is successfully finished!`);
   }
 })();
