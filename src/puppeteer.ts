@@ -86,7 +86,7 @@ export class HPuppeteerFacade<T extends AccumulatorObj> {
     try {
       const page = await this.browser.newPage();
       for (const [_, scenario] of scenarios.entries()) {
-        console.info(`Executing scenario: ${scenario.name}--`);
+        console.info(`Executing scenario: ${scenario.name}`);
         await scenario.action(page, this.accumulator);
       }
     } catch (error) {

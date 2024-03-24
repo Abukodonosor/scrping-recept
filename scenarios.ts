@@ -18,6 +18,7 @@ export const AccumulatorObject: AccumulatorObj = {
     category:
       {} /** There is also map of all Categories which includes short item information */,
   },
+  // WANT context attribute for final items result
   WANT: [],
 };
 
@@ -67,6 +68,7 @@ export const scrapingSteps: Scenario[] = [
         )[0];
 
         // Select card containers which contains data about products(items) and limit the output
+        // Parent selector reference
         const cardElements = (
           await page.$$(
             ".js-merch-stash-check-listing.v2-listing-card.wt-mr-xs-0.search-listing-card--desktop.search-listing-card--desktop.listing-card-experimental-style.appears-ready"
@@ -116,6 +118,7 @@ export const scrapingSteps: Scenario[] = [
   {
     name: "4. Collect product item details  [name, prices, url, picture, description, availableSizes]",
     action: async (page, accumulator) => {
+      let detailProductResult: ProductSpecification[] = [];
       const { category } = accumulator.TEMP;
 
       // Extract data based on keys from product category
@@ -123,11 +126,10 @@ export const scrapingSteps: Scenario[] = [
         .filter((el) => category[el])
         .map((el) => category[el])[0];
 
-      let detailProductResult: ProductSpecification[] = [];
-
       for (const product of productItems) {
         await page.goto(product.url);
 
+        // Parent selector reference
         const cardElement = (
           await page.$$(
             ".wt-pt-xs-5.listing-page-content-container-wider.wt-horizontal-center"
@@ -156,6 +158,8 @@ export const scrapingSteps: Scenario[] = [
               const isSize = document.querySelector(
                 ".wt-display-flex-xs.wt-justify-content-space-between.wt-align-items-baseline"
               );
+              // Not sure if i made it correctly.
+              // Pattern is here, we can easily adjust.
               if (!selectElement || !isSize) return "n/a";
 
               const options = selectElement.querySelectorAll("option");
@@ -165,9 +169,8 @@ export const scrapingSteps: Scenario[] = [
               return optionValues.toString();
             })) || "n/a",
         });
+        accumulator.WANT = detailProductResult;
       }
-      console.log(detailProductResult);
-      accumulator.WANT = detailProductResult;
     },
   },
   // {
