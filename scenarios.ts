@@ -9,9 +9,10 @@ import { getUrlsWithClass, getTextWithClass, cleanString } from "./src/helpers";
 export const AccumulatorObject: AccumulatorObj = {
   CONFIG: {
     SITE_URL: "https://www.etsy.com/",
-    MAX_CATEGORY: 2,
+    MAX_CATEGORY: 1,
     MAX_ITEMS_PER_PAGE: 10,
   },
+  // Dynamic contextual data
   TEMP: {
     categoriesPageLinks:
       [] /** Collected category urls from main page, so the next extraction is possible */,
@@ -107,8 +108,6 @@ export const scrapingSteps: Scenario[] = [
                   return anchor ? anchor.href : "n/a";
                 })) || "n/a",
             });
-            // console.log(itemsInfo);
-            // categoryItems.push(itemsInfo);
           }
         }
         accumulator.TEMP.category[pageCategoryName] = listItems;

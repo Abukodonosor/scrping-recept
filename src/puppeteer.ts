@@ -7,7 +7,7 @@ export interface AccumulatorObj {
     MAX_CATEGORY: number;
     MAX_ITEMS_PER_PAGE: number;
   };
-  // Dynamic context of our script
+  // Dynamic contextual data
   TEMP: {
     categoriesPageLinks: string[];
     category: {
