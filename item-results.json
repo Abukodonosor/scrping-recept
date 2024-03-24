@@ -1,0 +1,153 @@
+{
+  "CONFIG": {
+    "SITE_URL": "https://www.etsy.com/",
+    "MAX_CATEGORY": 2,
+    "MAX_ITEMS_PER_PAGE": 5
+  },
+  "TEMP": {
+    "categoriesPageLinks": [
+      "https://www.etsy.com/c/art-and-collectibles?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/clothing?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/baby?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/weddings?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/accessories?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/bags-and-purses?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/craft-supplies-and-tools?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/electronics-and-accessories?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/bath-and-beauty?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/books-movies-and-music?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/toys-and-games?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/pet-supplies?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/shoes?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/paper-and-party-supplies?ref=homepage_shop_by_category_card",
+      "https://www.etsy.com/c/gifts?ref=homepage_shop_by_category_card"
+    ],
+    "category": {
+      "Jewelry": [
+        {
+          "regularPrice": "Sale Price USD 95.05 USD 95.05",
+          "oldPrice": "USD 105.61 Original Price USD 105.61 (10% off)",
+          "name": "9K Gold Wedding Band 2mm Flat - Sleek Polished Finish, Handmade, Timeless Elegance, Comfortable, Ideal for Daily Wear & Special Occasions",
+          "url": "https://www.etsy.com/listing/985089776/9k-gold-wedding-band-2mm-flat-sleek?click_key=03e3618fa905a17b3f962817174d687712c80bbf%3A985089776&click_sum=49b391e8&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-662903-1-1&pro=1"
+        },
+        {
+          "regularPrice": "Sale Price USD 338.65 USD 338.65",
+          "oldPrice": "USD 521.00 Original Price USD 521.00 (35% off)",
+          "name": "Vintage Natural Sapphire Wedding band Marquise cut Rose Gold band Diamond/Moissanite Bridal Matching Stacking band Anniversary Promise ring",
+          "url": "https://www.etsy.com/listing/1142267662/vintage-natural-sapphire-wedding-band?click_key=0d9c3e3ff4f588cad91d4700817290d0804f6491%3A1142267662&click_sum=5ebc6eac&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-662903-1-2&pro=1&frs=1&sts=1"
+        },
+        {
+          "regularPrice": "Sale Price USD 277.51 USD 277.51",
+          "oldPrice": "USD 308.35 Original Price USD 308.35 (10% off)",
+          "name": "Tantalum Ring, Polished mirror finish, dark blue grey pure Tantalum wedding band.",
+          "url": "https://www.etsy.com/listing/856627057/tantalum-ring-polished-mirror-finish?click_key=3cdafe5b755de05edef7a98dace63fed56e117df%3A856627057&click_sum=2af78dd4&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-662903-1-3&pro=1&frs=1"
+        },
+        {
+          "regularPrice": "Sale Price USD 126.77 USD 126.77",
+          "oldPrice": "USD 169.02 Original Price USD 169.02 (25% off)",
+          "name": "Unique Hexagon cut black quartz rutilated engagement ring Solid 14K yellow gold promise ring Handmade Ring art deco Gifts for her",
+          "url": "https://www.etsy.com/listing/1617688129/unique-hexagon-cut-black-quartz?click_key=e3eb8a4d3c96c20aad5b52f25094c15302e63c94%3A1617688129&click_sum=3f5cde92&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-662903-1-4&pro=1&frs=1&sts=1"
+        },
+        {
+          "regularPrice": "USD 1.20",
+          "oldPrice": "n/a",
+          "name": "Natural Crystals Stretchy Chip Bracelets,Bracelet For Women,Healing Crystals Chip Bracelet,For Gift Crystals Bracelets.Gemstone Bracelets.",
+          "url": "https://www.etsy.com/listing/1513456244/natural-crystals-stretchy-chip?click_key=af26ab6f7b078de5eea172851868c23078aecde2%3A1513456244&click_sum=d17d3649&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-662904-1-1&frs=1&bes=1&sts=1&content_source=981dfecff4f7bb0a3d1fe4d087e27a28a289d18e%253A1513456244"
+        },
+        {
+          "regularPrice": "Sale Price USD 173.25 USD 173.25",
+          "oldPrice": "USD 495.00 Original Price USD 495.00 (65% off)",
+          "name": "3x6 Vintage Rug, Orange Beige Turkish Rug, Anatolian Rug, Bedroom Rug, Entryway Rug, Oushak Rug, Neutral Rug, Kitchen Rug, Muted Area Rug",
+          "url": "https://www.etsy.com/listing/1701823197/3x6-vintage-rug-orange-beige-turkish-rug?click_key=03a3cdbff9b8c081d883b7100f4de016809eaf47%3A1701823197&click_sum=006ce56a&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-23163-1-1&pro=1&frs=1"
+        },
+        {
+          "regularPrice": "Sale Price USD 17.29 USD 17.29",
+          "oldPrice": "USD 25.80 Original Price USD 25.80 (33% off)",
+          "name": "Archangel Haniel Empowerment Initiation, Attunement Certification, Heighten Intuition, Receptivity, Divination & Psychic Abilities",
+          "url": "https://www.etsy.com/listing/1368350022/archangel-haniel-empowerment-initiation?click_key=86e759c87800e978a86c169a89ab065cae717c6b%3A1368350022&click_sum=833d777f&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-23163-1-2&pro=1&sts=1&dd=1"
+        },
+        {
+          "regularPrice": "USD 15.83",
+          "oldPrice": "n/a",
+          "name": "J seal removal with psychic reading. Implant removal, remove blockages,psychic ability,spiritual cleanse, higher self.",
+          "url": "https://www.etsy.com/listing/1345575279/j-seal-removal-with-psychic-reading?click_key=079d4f139f80b5122846295a05bfd387a8d1c102%3A1345575279&click_sum=8c3957c0&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-23163-1-3&sts=1&dd=1"
+        },
+        {
+          "regularPrice": "Sale Price USD 47.50 USD 47.50",
+          "oldPrice": "USD 50.00 Original Price USD 50.00 (5% off)",
+          "name": "Magnetic Knife Rack, Olive Wooden Knife Holder, Live Edge Wood Knife Bar, Storage For Wall, Knife Rack with self-adhesive or hidden screws",
+          "url": "https://www.etsy.com/listing/1402875957/magnetic-knife-rack-olive-wooden-knife?click_key=66672b6a3a1eed54a6a1dada5475e3e5a70869f8%3A1402875957&click_sum=836bcab6&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-23163-1-4&pro=1&frs=1&sts=1"
+        },
+        {
+          "regularPrice": "USD 1.02",
+          "oldPrice": "n/a",
+          "name": "Candles of Positive Encouragement · Special Gifts",
+          "url": "https://www.etsy.com/listing/1676856892/candles-of-positive-encouragement?click_key=5e482a461e9c4839136c32e4055566c626dbdf3f%3A1676856892&click_sum=c10ed47b&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-23164-1-1&content_source=d57b6bb2b7ebae95f9682fd54549613e04a7dfbf%253A1676856892"
+        }
+      ],
+      "Home & Living": [
+        {
+          "regularPrice": "Sale Price USD 95.05 USD 95.05",
+          "oldPrice": "USD 105.61 Original Price USD 105.61 (10% off)",
+          "name": "9K Gold Wedding Band 2mm Flat - Sleek Polished Finish, Handmade, Timeless Elegance, Comfortable, Ideal for Daily Wear & Special Occasions",
+          "url": "https://www.etsy.com/listing/985089776/9k-gold-wedding-band-2mm-flat-sleek?click_key=03e3618fa905a17b3f962817174d687712c80bbf%3A985089776&click_sum=49b391e8&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-662903-1-1&pro=1"
+        },
+        {
+          "regularPrice": "Sale Price USD 338.65 USD 338.65",
+          "oldPrice": "USD 521.00 Original Price USD 521.00 (35% off)",
+          "name": "Vintage Natural Sapphire Wedding band Marquise cut Rose Gold band Diamond/Moissanite Bridal Matching Stacking band Anniversary Promise ring",
+          "url": "https://www.etsy.com/listing/1142267662/vintage-natural-sapphire-wedding-band?click_key=0d9c3e3ff4f588cad91d4700817290d0804f6491%3A1142267662&click_sum=5ebc6eac&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-662903-1-2&pro=1&frs=1&sts=1"
+        },
+        {
+          "regularPrice": "Sale Price USD 277.51 USD 277.51",
+          "oldPrice": "USD 308.35 Original Price USD 308.35 (10% off)",
+          "name": "Tantalum Ring, Polished mirror finish, dark blue grey pure Tantalum wedding band.",
+          "url": "https://www.etsy.com/listing/856627057/tantalum-ring-polished-mirror-finish?click_key=3cdafe5b755de05edef7a98dace63fed56e117df%3A856627057&click_sum=2af78dd4&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-662903-1-3&pro=1&frs=1"
+        },
+        {
+          "regularPrice": "Sale Price USD 126.77 USD 126.77",
+          "oldPrice": "USD 169.02 Original Price USD 169.02 (25% off)",
+          "name": "Unique Hexagon cut black quartz rutilated engagement ring Solid 14K yellow gold promise ring Handmade Ring art deco Gifts for her",
+          "url": "https://www.etsy.com/listing/1617688129/unique-hexagon-cut-black-quartz?click_key=e3eb8a4d3c96c20aad5b52f25094c15302e63c94%3A1617688129&click_sum=3f5cde92&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-662903-1-4&pro=1&frs=1&sts=1"
+        },
+        {
+          "regularPrice": "USD 1.20",
+          "oldPrice": "n/a",
+          "name": "Natural Crystals Stretchy Chip Bracelets,Bracelet For Women,Healing Crystals Chip Bracelet,For Gift Crystals Bracelets.Gemstone Bracelets.",
+          "url": "https://www.etsy.com/listing/1513456244/natural-crystals-stretchy-chip?click_key=af26ab6f7b078de5eea172851868c23078aecde2%3A1513456244&click_sum=d17d3649&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-662904-1-1&frs=1&bes=1&sts=1&content_source=981dfecff4f7bb0a3d1fe4d087e27a28a289d18e%253A1513456244"
+        },
+        {
+          "regularPrice": "Sale Price USD 173.25 USD 173.25",
+          "oldPrice": "USD 495.00 Original Price USD 495.00 (65% off)",
+          "name": "3x6 Vintage Rug, Orange Beige Turkish Rug, Anatolian Rug, Bedroom Rug, Entryway Rug, Oushak Rug, Neutral Rug, Kitchen Rug, Muted Area Rug",
+          "url": "https://www.etsy.com/listing/1701823197/3x6-vintage-rug-orange-beige-turkish-rug?click_key=03a3cdbff9b8c081d883b7100f4de016809eaf47%3A1701823197&click_sum=006ce56a&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-23163-1-1&pro=1&frs=1"
+        },
+        {
+          "regularPrice": "Sale Price USD 17.29 USD 17.29",
+          "oldPrice": "USD 25.80 Original Price USD 25.80 (33% off)",
+          "name": "Archangel Haniel Empowerment Initiation, Attunement Certification, Heighten Intuition, Receptivity, Divination & Psychic Abilities",
+          "url": "https://www.etsy.com/listing/1368350022/archangel-haniel-empowerment-initiation?click_key=86e759c87800e978a86c169a89ab065cae717c6b%3A1368350022&click_sum=833d777f&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-23163-1-2&pro=1&sts=1&dd=1"
+        },
+        {
+          "regularPrice": "USD 15.83",
+          "oldPrice": "n/a",
+          "name": "J seal removal with psychic reading. Implant removal, remove blockages,psychic ability,spiritual cleanse, higher self.",
+          "url": "https://www.etsy.com/listing/1345575279/j-seal-removal-with-psychic-reading?click_key=079d4f139f80b5122846295a05bfd387a8d1c102%3A1345575279&click_sum=8c3957c0&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-23163-1-3&sts=1&dd=1"
+        },
+        {
+          "regularPrice": "Sale Price USD 47.50 USD 47.50",
+          "oldPrice": "USD 50.00 Original Price USD 50.00 (5% off)",
+          "name": "Magnetic Knife Rack, Olive Wooden Knife Holder, Live Edge Wood Knife Bar, Storage For Wall, Knife Rack with self-adhesive or hidden screws",
+          "url": "https://www.etsy.com/listing/1402875957/magnetic-knife-rack-olive-wooden-knife?click_key=66672b6a3a1eed54a6a1dada5475e3e5a70869f8%3A1402875957&click_sum=836bcab6&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-23163-1-4&pro=1&frs=1&sts=1"
+        },
+        {
+          "regularPrice": "USD 1.02",
+          "oldPrice": "n/a",
+          "name": "Candles of Positive Encouragement · Special Gifts",
+          "url": "https://www.etsy.com/listing/1676856892/candles-of-positive-encouragement?click_key=5e482a461e9c4839136c32e4055566c626dbdf3f%3A1676856892&click_sum=c10ed47b&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=search_grid-23164-1-1&content_source=d57b6bb2b7ebae95f9682fd54549613e04a7dfbf%253A1676856892"
+        }
+      ]
+    }
+  },
+  "RESULT": {}
+}
