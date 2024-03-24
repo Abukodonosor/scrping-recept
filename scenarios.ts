@@ -1,11 +1,16 @@
-import { AccumulatorObj, Scenario } from "./src/puppeteer";
+import {
+  AccumulatorObj,
+  ProductSpecification,
+  Scenario,
+  ShortSpecification,
+} from "./src/puppeteer";
 import { getUrlsWithClass, getTextWithClass, cleanString } from "./src/helpers";
 
 export const AccumulatorObject: AccumulatorObj = {
   CONFIG: {
     SITE_URL: "https://www.etsy.com/",
     MAX_CATEGORY: 2,
-    MAX_ITEMS_PER_PAGE: 5,
+    MAX_ITEMS_PER_PAGE: 10,
   },
   TEMP: {
     categoriesPageLinks:
@@ -13,7 +18,7 @@ export const AccumulatorObject: AccumulatorObj = {
     category:
       {} /** There is also map of all Categories which includes short item information */,
   },
-  WANT: {},
+  WANT: [],
 };
 
 /**
@@ -29,13 +34,13 @@ export const AccumulatorObject: AccumulatorObj = {
 
 export const scrapingSteps: Scenario[] = [
   {
-    name: "Open Etsy shop",
+    name: "1. Open Etsy shop",
     action: async (page, accumulator) => {
       await page.goto(accumulator.CONFIG.SITE_URL);
     },
   },
   {
-    name: "Collect all category groups on page",
+    name: "2. Collect all category groups on page",
     action: async (page, accumulator) => {
       // Idea behind this scenario is to collect all category urls
       // On the main page, collect all urls of category cards
@@ -46,16 +51,10 @@ export const scrapingSteps: Scenario[] = [
     },
   },
   {
-    name: "On Category pages collect 10 items with attributes: [name, prices, url]",
+    name: "3. On Category pages collect 10 items with attributes: [name, prices, url]",
     action: async (page, accumulator) => {
-      let categoryItems: {
-        name: string;
-        regularPrice: string;
-        oldPrice: string | any;
-        url: string;
-      }[] = [];
       const { categoriesPageLinks } = accumulator.TEMP;
-
+      let listItems: ShortSpecification[] = [];
       // Visit every category page and extract the items for it
       for (const url of categoriesPageLinks.splice(
         0,
@@ -67,7 +66,7 @@ export const scrapingSteps: Scenario[] = [
           await getTextWithClass(page, ".wt-text-heading")
         )[0];
 
-        // Select card containers which contains data about products(items)
+        // Select card containers which contains data about products(items) and limit the output
         const cardElements = (
           await page.$$(
             ".js-merch-stash-check-listing.v2-listing-card.wt-mr-xs-0.search-listing-card--desktop.search-listing-card--desktop.listing-card-experimental-style.appears-ready"
@@ -82,7 +81,7 @@ export const scrapingSteps: Scenario[] = [
           if (priceElement) {
             const childElements = await priceElement.$$("p");
             // Extract information
-            const itemsInfo = {
+            listItems.push({
               regularPrice: cleanString(
                 (await childElements[0]?.evaluate(
                   (el) => el.textContent?.trim() || ""
@@ -105,48 +104,89 @@ export const scrapingSteps: Scenario[] = [
                   ) as HTMLAnchorElement;
                   return anchor ? anchor.href : "n/a";
                 })) || "n/a",
-            };
-            console.log(itemsInfo);
-            categoryItems.push(itemsInfo);
+            });
+            // console.log(itemsInfo);
+            // categoryItems.push(itemsInfo);
           }
         }
-        accumulator.TEMP.category[pageCategoryName] = categoryItems;
+        accumulator.TEMP.category[pageCategoryName] = listItems;
       }
     },
   },
   {
-    name: "Collect product item details",
+    name: "4. Collect product item details  [name, prices, url, picture, description, availableSizes]",
     action: async (page, accumulator) => {
-      const extractionList = accumulator.TEMP.category;
-      await page.goto("https://www.etsy.com/");
+      const { category } = accumulator.TEMP;
 
-      // mrdzuj sve product linkove u 1 niz
+      // Extract data based on keys from product category
+      const productItems = Object.keys(accumulator.TEMP.category)
+        .filter((el) => category[el])
+        .map((el) => category[el])[0];
 
-      // idi po nizu i izvlaci podatke
+      let detailProductResult: ProductSpecification[] = [];
 
-      // izvuci sliku, opis, naslov,
+      for (const product of productItems) {
+        await page.goto(product.url);
 
-      //
+        const cardElement = (
+          await page.$$(
+            ".wt-pt-xs-5.listing-page-content-container-wider.wt-horizontal-center"
+          )
+        )[0];
+
+        detailProductResult.push({
+          ...product,
+          picture:
+            (await cardElement?.evaluate((el) => {
+              const item: any = el.querySelector(
+                ".wt-max-width-full.wt-horizontal-center.wt-vertical-center.carousel-image.wt-rounded"
+              );
+              return item ? item.src : "n/a";
+            })) || "n/a",
+          description:
+            (await cardElement?.$eval(
+              ".wt-text-body-01.wt-line-height-tight.wt-break-word.wt-mt-xs-1",
+              (el) => el.textContent?.trim() || ""
+            )) || "n/a",
+          availableSizes:
+            (await cardElement?.evaluate(() => {
+              const selectElement = document.querySelector(
+                "#variation-selector-1"
+              );
+              const isSize = document.querySelector(
+                ".wt-display-flex-xs.wt-justify-content-space-between.wt-align-items-baseline"
+              );
+              if (!selectElement || !isSize) return "n/a";
+
+              const options = selectElement.querySelectorAll("option");
+              const optionValues = Array.from(options).map(
+                (option) => option.textContent?.trim() || ""
+              );
+              return optionValues.toString();
+            })) || "n/a",
+        });
+      }
+      console.log(detailProductResult);
+      accumulator.WANT = detailProductResult;
     },
   },
-  {
-    name: "Simulate Adding Products to Cart ",
-    action: async (page, accumulator) => {
-      await page.goto("https://www.etsy.com/");
+  // {
+  //   name: "5. Simulate Adding Products to Cart ",
+  //   action: async (page, accumulator) => {
+  //     // uzmi jedan random proizvod
 
-      // uzmi jedan random proizvod
+  //     await page.goto("https://www.etsy.com/");
 
-      // dodaj ga na karticu
-    },
-  },
-  {
-    name: "Checkout Simulation",
-    action: async (page, accumulator) => {
-      await page.goto("https://www.etsy.com/");
+  //     // dodaj ga na karticu
+  //   },
+  // },
+  // {
+  //   name: "6. Checkout Simulation",
+  //   action: async (page, accumulator) => {
+  //     await page.goto("https://www.etsy.com/");
 
-      // otici na korpu
+  //     // otici na korpu
 
-      // pokusati da kliknete na CTA za kupovinu
-    },
-  },
+  //     // pokusati da kliknete na CTA za kupovinu
+  //   },
 ];

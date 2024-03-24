@@ -1,4 +1,4 @@
-import { HPuppeteerFacade, Scenario } from "../src/puppeteer";
+import { AccumulatorObj, HPuppeteerFacade, Scenario } from "../src/puppeteer";
 
 describe("PuppeteerFacade Scenario tests", () => {
   let puppeteerFacade: HPuppeteerFacade<any>;
@@ -53,7 +53,7 @@ describe("PuppeteerFacade Scenario tests", () => {
 
   scenarios.forEach((testCase: any) => {
     it(testCase.name, async () => {
-      const accumulator = {};
+      const accumulator: any = {};
       puppeteerFacade = new HPuppeteerFacade(accumulator);
       await puppeteerFacade.init({ headless: true });
       const result = await puppeteerFacade.executeScenarios(testCase.scenarios);

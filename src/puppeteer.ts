@@ -9,14 +9,37 @@ export interface AccumulatorObj {
   };
   // Dynamic context of our script
   TEMP: {
-    [key: string]: any;
+    categoriesPageLinks: string[];
+    category: {
+      [key: string]: ShortSpecification[];
+    };
+    // [key: string]: any;
   };
   //** WANT attribute acts like RESULT context where we prepare data for output*/
-  WANT: {};
+  WANT: ProductSpecification[];
+}
+
+export interface ShortSpecification {
+  name: string;
+  regularPrice: string;
+  oldPrice: string | any;
+  url: string;
+}
+export interface ProductSpecification {
+  picture: string;
+  description: string;
+  availableSizes: string;
+  name: string;
+  regularPrice: string;
+  oldPrice: string;
+  url: string;
 }
 
 // Step function type
-export type ScenarioFunction = (page: Page, accumulator: any) => Promise<any>;
+export type ScenarioFunction = (
+  page: Page,
+  accumulator: AccumulatorObj
+) => Promise<any>;
 
 // Scenario object structure
 export interface Scenario {
@@ -29,7 +52,7 @@ export interface Accumulator {
   [key: string]: any;
 }
 
-export class HPuppeteerFacade<T extends Accumulator> {
+export class HPuppeteerFacade<T extends AccumulatorObj> {
   private browser!: Browser;
   private accumulator: T;
 
@@ -62,8 +85,8 @@ export class HPuppeteerFacade<T extends Accumulator> {
   async executeScenarios(scenarios: Scenario[]) {
     try {
       const page = await this.browser.newPage();
-      for (const [index, scenario] of scenarios.entries()) {
-        console.info(`${index}.Executing scenario: ${scenario.name}--`);
+      for (const [_, scenario] of scenarios.entries()) {
+        console.info(`Executing scenario: ${scenario.name}--`);
         await scenario.action(page, this.accumulator);
       }
     } catch (error) {

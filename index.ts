@@ -1,6 +1,6 @@
 import { AccumulatorObject, scrapingSteps } from "./scenarios";
 import { writeJSONToFile } from "./src/helpers";
-import { HPuppeteerFacade } from "./src/puppeteer";
+import { AccumulatorObj, HPuppeteerFacade } from "./src/puppeteer";
 
 (async () => {
   let res;
