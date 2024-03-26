@@ -70,12 +70,13 @@ You can modify the index.ts file to suit your specific scraping needs. By defaul
 
 # For commercial usage
 
-There are few mechanism which should be implemented before you wish to use this script commercial.
+There are a few mechanisms that should be implemented before you wish to use this script commercially.
 
-[] - SetUp proxy adapters and and by multiple proxy providers/servers
-[] - Make orchestration layer instead of "accumulator" then we can run in concurrent
-[] - Fallback and retry logic
-[]
+- Setup proxy adapters and multiple proxy providers/servers
+- Make an orchestration layer instead of an "accumulator" then we can run the scraping in a concurrent way
+- Fallback and retry logic (when the request gets blocked, or HTML changes the structure)
+- ...
+
 
 ## Dependencies
 
